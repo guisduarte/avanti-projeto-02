@@ -1,0 +1,31 @@
+.containerBusca {
+  width: 503px;
+  height: 62px;
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.containerBusca input {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  padding-left: 16px;
+}
+
+.botaoBuscar {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #005cff;
+  position: absolute;
+  top: 0;
+  left: 91%;
+  cursor: pointer;
+}

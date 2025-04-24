@@ -1,0 +1,91 @@
+.card,
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  min-width: 1156px;
+  min-height: 537px;
+  background-color: #000000;
+}
+
+.cardContainer {
+  width: 980px;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.containerTitulo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.containerTitulo h1 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 100%;
+  color: #ffffff;
+}
+
+.containerPerfil {
+  width: 804px;
+  height: 257px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  border-radius: 25px;
+  background-color: #d9d9d9;
+}
+
+.containerFotoPerfil {
+  width: 220px;
+  height: 220px;
+  margin-left: 32px;
+}
+
+.containerFotoPerfil img {
+  max-width: 100%;
+  max-height: 100%;
+  border: 2px solid #005cff;
+  border-radius: 50%;
+}
+
+.containerTextoPerfil {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.containerTextoPerfil h2,
+.containerTextoPerfil p {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.containerTextoPerfil h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #005cff;
+}
+.containerTextoPerfil p,
+.carregando {
+  width: 448px;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.erro {
+  width: 497px;
+  height: 54px;
+  font-family: 'Nunito Sans' sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  text-align: center;
+  color: #ff0000;
+  margin: 0 auto;
+}

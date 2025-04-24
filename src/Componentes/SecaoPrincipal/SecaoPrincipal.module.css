@@ -1,0 +1,11 @@
+.fundo {
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at 90% 10%, #005cff -30%, transparent 30%),
+    radial-gradient(circle at 10% 90%, #005cff -30%, transparent 30%), #1f1f1f;
+  background-repeat: no-repeat;
+  background-size: cover, cover, cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
