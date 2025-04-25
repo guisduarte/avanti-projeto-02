@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import styles from './CampoDeBusca.module.css';
 
-const CampoDeBusca = ({ onBuscar }) => {
+const CampoDeBusca = ({ aoBuscar }) => {
   const [input, setInput] = useState('');
 
   const handleBuscar = () => {
     if (input.trim() !== '') {
-      onBuscar(input);
+      aoBuscar(input);
+      setInput('');
+    } else {
+      aoBuscar(null);
     }
   };
 
@@ -16,7 +19,7 @@ const CampoDeBusca = ({ onBuscar }) => {
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder="Digite o nome de usuário"
+        placeholder="Digite um usuário do Github"
       />
 
       <button className={styles.botaoBuscar} onClick={handleBuscar}>

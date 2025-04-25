@@ -10,20 +10,25 @@ const Card = () => {
   const buscarUsuario = async (usuario) => {
     setDados(null);
     setErro(null);
+    
+    if(usuario === null) {
+      setErro('Por favor, digite um nome de usuário para buscar.');
+      return;
+    }
     setCarregando(true);
     try {
       const resposta = await fetch(`https://api.github.com/users/${usuario}`);
-      if (!resposta.ok) throw new Error('Nenhum perfil foi encontrado com esse nome de usuário. Tente novamente');
+      if (!resposta.ok)
+        throw new Error(
+          'Nenhum perfil foi encontrado com esse nome de usuário. Tente novamente',
+        );
       const resultado = await resposta.json();
       setDados(resultado);
-      // setErro(null);
     } catch (err) {
-      // setDados(null);
       setErro(err.message);
     } finally {
       setCarregando(false);
     }
-
   };
 
   return (
@@ -37,10 +42,21 @@ const Card = () => {
             alt="Imagem com o nome do Github"
           />
         </div>
-        <CampoDeBusca onBuscar={buscarUsuario} />
+        <CampoDeBusca aoBuscar={buscarUsuario} />
 
-        <div className={styles.containerPerfil}>
-          {carregando && <p className={styles.carregando}>Carregando...</p>}
+        <div
+          className={`${styles.containerPerfil} ${
+            dados || erro || carregando ? styles.containerPerfilVisivel : ''
+          }`}
+        >
+          
+          {carregando && (
+            <div className={styles.spinnerContainer}>
+              <p className={styles.carregando}>Carregando...</p>
+              <div className={styles.spinner}></div>
+            </div>
+          )}
+
           {erro && !carregando && <p className={styles.erro}>{erro}</p>}
           {dados && !carregando && (
             <>
